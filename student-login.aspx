@@ -24,9 +24,9 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 488px">&nbsp;</td>
-            <td>
-                <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Save" />
+            <td style="width: 488px; height: 31px;"></td>
+            <td style="height: 31px">
+                <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" />
             </td>
         </tr>
     </table>
