@@ -14,7 +14,7 @@
             <td style="height: 27px">
                 <asp:TextBox ID="txtID" runat="server"></asp:TextBox>
             </td>
-        </tr>
+        </tr> 
         <tr>
             <td style="width: 488px; height: 27px">
                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
