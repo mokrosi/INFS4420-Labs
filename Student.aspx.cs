@@ -65,6 +65,13 @@ namespace INFS4420Labs
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtFrom.Text == "" || txtTo.Text == "" || ddlDepartureTime.Text == "" || ddlReturnTime.Text == "")
+            {
+                lblConfirmTransactionError.Visible = true;
+                return;
+            }
+
+
             string strDate; 
             string strTime; 
             strDate = DateTime.Now.ToShortDateString(); 
@@ -90,6 +97,12 @@ namespace INFS4420Labs
             dbc.strSql += "'" + strTime + "', ";
             dbc.strSql += "'No')";
             dbo.dbOperations(dbc.strSql, "");
+            lblConfirmTransaction.Visible = true;
+            lblConfirmTransactionError.Visible = false;
+            txtFrom.Text = "";
+            txtTo.Text = "";
+
+
         }
     }
 }
