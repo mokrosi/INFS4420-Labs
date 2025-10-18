@@ -23,5 +23,6 @@ namespace INFS4420Labs
         public static string strMoveTo = "";
         public static string strDepTime = "";
         public static string strReturnTime = "";
+
     }
 }

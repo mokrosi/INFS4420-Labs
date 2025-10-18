@@ -33,6 +33,19 @@ namespace INFS4420Labs
             txtDate.Text = grdTranscations.SelectedRow.Cells[7].Text;
             txtTime.Text = grdTranscations.SelectedRow.Cells[8].Text;
             txtApproved.Text = grdTranscations.SelectedRow.Cells[9].Text;
+            passValues();
         }
+
+        private void passValues() {
+            DatabaseConnection.strReferenceNo = txtRequestNo.Text;
+            DatabaseConnection.strStudentID = txtStudentID.Text;
+            DatabaseConnection.strMoveFrom = txtFrom.Text;
+            DatabaseConnection.strMoveTo = txtDestination.Text;
+            DatabaseConnection.strDepTime = txtDeparture.Text;
+            DatabaseConnection.strReturnTime = txtReturn.Text;
+        }
+
+
+
     }
 }
