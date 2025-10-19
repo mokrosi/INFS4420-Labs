@@ -83,7 +83,7 @@ namespace INFS4420Labs
 
             int intRowCount = dbc.tblMyTable.Rows.Count;
             string strRequestedID ;
-            strRequestedID =  (intRowCount + 1) + "";
+            strRequestedID = "REQ"+ (intRowCount + 1) + "";
 
             dbc.strSql = "INSERT INTO RequestedTrip ([RequestedID],[StudentID], [MoveFrom], MoveTo, ";
             dbc.strSql += " DepartureTime, ReturnTime, DateIssue, TimeIssue, RequestedStatus) ";
