@@ -5,23 +5,6 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INFS4420Labs", "INFS4420Labs.csproj", "{57CA05C8-772B-4DAA-B5E5-E3DBE698B79E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Downloads\Images\Images\D100.jpg = ..\..\Downloads\Images\Images\D100.jpg
-		..\..\Downloads\Images\Images\D101.jpg = ..\..\Downloads\Images\Images\D101.jpg
-		..\..\Downloads\Images\Images\D102.jpg = ..\..\Downloads\Images\Images\D102.jpg
-		..\..\Downloads\Images\Images\D103.jpg = ..\..\Downloads\Images\Images\D103.jpg
-		..\..\Downloads\Images\Images\D104.jpg = ..\..\Downloads\Images\Images\D104.jpg
-		..\..\Downloads\Images\Images\D105.jpg = ..\..\Downloads\Images\Images\D105.jpg
-		..\..\Downloads\Images\Images\D106.jpg = ..\..\Downloads\Images\Images\D106.jpg
-		..\..\Downloads\Images\Images\D107.jpg = ..\..\Downloads\Images\Images\D107.jpg
-		..\..\Downloads\Images\Images\D108.jpg = ..\..\Downloads\Images\Images\D108.jpg
-		..\..\Downloads\Images\Images\D109.jpg = ..\..\Downloads\Images\Images\D109.jpg
-		..\..\Downloads\Images\Images\D110.jpg = ..\..\Downloads\Images\Images\D110.jpg
-		..\..\Downloads\Images\Images\D111.jpg = ..\..\Downloads\Images\Images\D111.jpg
-		..\..\Downloads\Images\Images\D112.jpg = ..\..\Downloads\Images\Images\D112.jpg
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

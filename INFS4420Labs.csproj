@@ -104,6 +104,7 @@
     <Content Include="App_Data\Transportation_log.ldf">
       <DependentUpon>Transportation.mdf</DependentUpon>
     </Content>
+    <Content Include="assign-driver.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -125,6 +126,19 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="images\D100.jpg" />
+    <Content Include="images\D101.jpg" />
+    <Content Include="images\D102.jpg" />
+    <Content Include="images\D103.jpg" />
+    <Content Include="images\D104.jpg" />
+    <Content Include="images\D105.jpg" />
+    <Content Include="images\D106.jpg" />
+    <Content Include="images\D107.jpg" />
+    <Content Include="images\D108.jpg" />
+    <Content Include="images\D109.jpg" />
+    <Content Include="images\D110.jpg" />
+    <Content Include="images\D111.jpg" />
+    <Content Include="images\D112.jpg" />
     <Content Include="my_transaction.aspx" />
     <Content Include="process-transaction.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -200,6 +214,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="assign-driver.aspx.cs">
+      <DependentUpon>assign-driver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assign-driver.aspx.designer.cs">
+      <DependentUpon>assign-driver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
