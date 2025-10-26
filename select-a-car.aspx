@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:GridView ID="grdCar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="167px" Width="209px">
+                <asp:GridView ID="grdCar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="167px" Width="209px" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdCar_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

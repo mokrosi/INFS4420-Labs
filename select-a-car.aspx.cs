@@ -13,10 +13,11 @@ namespace INFS4420Labs
 
         DatabaseConnection dbc = new DatabaseConnection();
         DatabaseOperations dbo = new DatabaseOperations();
-        static DataTable tblCar = new DataTable();
+        DataTable tblCar = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int intRowcounter;
+            if (Page.IsPostBack == false) { 
+                int intRowcounter;
             dbc.strSql = "SELECT * FROM CAR";
             dbc.strTableName = "CAR";
             tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
@@ -29,17 +30,18 @@ namespace INFS4420Labs
                 List<String> StrCarName = new List<String>();
                 while (intCarIndex < intRowcounter)
                 {
-                if (StrCarName.Contains(tblCar.Rows[intCarIndex][1].ToString()))
+                if (!StrCarName.Contains(tblCar.Rows[intCarIndex][1].ToString()))
                 {
+                    StrCarName.Add(tblCar.Rows[intCarIndex][1].ToString());
+                    ddlcarList.Items.Add(tblCar.Rows[intCarIndex][1].ToString());
                     intCarIndex++;
-                    continue;
                 }
                 else
                 {
-                    ddlcarList.Items.Add(tblCar.Rows[intCarIndex][1].ToString());
-                    StrCarName.Add(tblCar.Rows[intCarIndex][1].ToString());
                     intCarIndex++;
+
                 }
+            }
             }
 
         }
@@ -75,6 +77,19 @@ namespace INFS4420Labs
             grdCar.DataSource = tblCar;
             grdCar.DataBind();
 
+        }
+
+        protected void grdCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grdCar.DataSource = null;
+            grdCar.DataBind();
+            int intRowcounter;
+            dbc.strSql = "SELECT * FROM CAR WHERE [Car_Name] = '" + ddlcarList.Text + "'";
+            dbc.strTableName = "CAR";
+            tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
+            intRowcounter = tblCar.Rows.Count;
+            grdCar.DataSource = tblCar;
+            grdCar.DataBind();
         }
     }
 }
