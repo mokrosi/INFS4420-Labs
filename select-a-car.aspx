@@ -2,19 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table class="w-100">
         <tr>
-            <td style="width: 371px; height: 49px">Brand</td>
+            <td style="width: 256px; height: 49px">Brand</td>
             <td style="height: 49px">
-                <asp:DropDownList ID="ddlcarList" runat="server" AutoPostBack="True" Height="39px" OnSelectedIndexChanged="ddlcarList_SelectedIndexChanged" Width="88px">
+                <asp:DropDownList ID="ddlcarList" runat="server" AutoPostBack="True" Height="39px" OnSelectedIndexChanged="ddlcarList_SelectedIndexChanged" Width="168px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td style="width: 371px">&nbsp;</td>
+            <td style="width: 256px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td colspan="2">
-                <asp:GridView ID="grdCar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="167px" Width="209px" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdCar_SelectedIndexChanged">
+                <asp:GridView ID="grdCar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="167px" Width="828px" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdCar_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -30,7 +30,7 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 371px">&nbsp;</td>
+            <td style="width: 256px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
     </table>
