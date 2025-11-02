@@ -105,6 +105,7 @@
       <DependentUpon>Transportation.mdf</DependentUpon>
     </Content>
     <Content Include="assign-driver.aspx" />
+    <Content Include="confirmation.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="assign-driver.aspx.designer.cs">
       <DependentUpon>assign-driver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmation.aspx.cs">
+      <DependentUpon>confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmation.aspx.designer.cs">
+      <DependentUpon>confirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

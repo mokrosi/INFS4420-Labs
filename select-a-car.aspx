@@ -2,19 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table class="w-100">
         <tr>
-            <td style="width: 371px; height: 49px">Brand</td>
+            <td style="width: 230px; height: 49px">Brand</td>
             <td style="height: 49px">
                 <asp:DropDownList ID="ddlcarList" runat="server" AutoPostBack="True" Height="39px" OnSelectedIndexChanged="ddlcarList_SelectedIndexChanged" Width="88px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td style="width: 371px">&nbsp;</td>
+            <td style="width: 230px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2">
-                <asp:GridView ID="grdCar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="167px" Width="209px" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdCar_SelectedIndexChanged">
+            <td colspan="2" style="height: 169px">
+                <asp:GridView ID="grdCar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="167px" Width="289px" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grdCar_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -30,8 +30,23 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 371px">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td style="width: 230px">&nbsp;</td>
+            <td>
+                <table class="w-100">
+                    <tr>
+                        <td style="width: 163px">Plate Number</td>
+                        <td>
+                            <asp:TextBox ID="txtPlateNum" runat="server" style="margin-right: 125" Width="202px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 163px; height: 27px">Brand</td>
+                        <td style="height: 27px">
+                            <asp:TextBox ID="txtBrand" runat="server" Width="195px"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
 </asp:Content>

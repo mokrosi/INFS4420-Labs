@@ -16,32 +16,33 @@ namespace INFS4420Labs
         DataTable tblCar = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack == false) { 
+            if (Page.IsPostBack == false)
+            {
                 int intRowcounter;
-            dbc.strSql = "SELECT * FROM CAR";
-            dbc.strTableName = "CAR";
-            tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
-            intRowcounter = tblCar.Rows.Count;
-            grdCar.DataSource = tblCar;
-            grdCar.DataBind();
-            int intCarIndex;
-            intCarIndex = 0;
-                
+                dbc.strSql = "SELECT * FROM CAR";
+                dbc.strTableName = "CAR";
+                tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
+                intRowcounter = tblCar.Rows.Count;
+                grdCar.DataSource = tblCar;
+                grdCar.DataBind();
+                int intCarIndex;
+                intCarIndex = 0;
+
                 List<String> StrCarName = new List<String>();
                 while (intCarIndex < intRowcounter)
                 {
-                if (!StrCarName.Contains(tblCar.Rows[intCarIndex][1].ToString()))
-                {
-                    StrCarName.Add(tblCar.Rows[intCarIndex][1].ToString());
-                    ddlcarList.Items.Add(tblCar.Rows[intCarIndex][1].ToString());
-                    intCarIndex++;
-                }
-                else
-                {
-                    intCarIndex++;
+                    if (!StrCarName.Contains(tblCar.Rows[intCarIndex][1].ToString()))
+                    {
+                        StrCarName.Add(tblCar.Rows[intCarIndex][1].ToString());
+                        ddlcarList.Items.Add(tblCar.Rows[intCarIndex][1].ToString());
+                        intCarIndex++;
+                    }
+                    else
+                    {
+                        intCarIndex++;
 
+                    }
                 }
-            }
             }
 
         }
@@ -81,15 +82,17 @@ namespace INFS4420Labs
 
         protected void grdCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            grdCar.DataSource = null;
-            grdCar.DataBind();
-            int intRowcounter;
-            dbc.strSql = "SELECT * FROM CAR WHERE [Car_Name] = '" + ddlcarList.Text + "'";
-            dbc.strTableName = "CAR";
-            tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
-            intRowcounter = tblCar.Rows.Count;
-            grdCar.DataSource = tblCar;
-            grdCar.DataBind();
+
+            txtPlateNum.Text = grdCar.SelectedRow.Cells[1].Text;
+            txtBrand.Text = grdCar.SelectedRow.Cells[2].Text;
+            DatabaseConnection.strCarPlateNo = txtPlateNum.Text;
+            //passValues();
+
         }
+
+        //private void passValues()
+        //{
+        //    DatabaseConnection.strCarPlateNo = txtPlateNum.Text;
+        //}
     }
 }

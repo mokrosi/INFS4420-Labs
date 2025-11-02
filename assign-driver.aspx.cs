@@ -36,6 +36,7 @@ namespace INFS4420Labs
             txtDriverName.Text = tblDriver.Rows[intRowIndex][1].ToString();
             txtStatus.Text = tblDriver.Rows[intRowIndex][2].ToString();
             imgDriver.ImageUrl = "~/images/" + txtDriverID.Text + ".jpg";
+            DatabaseConnection.strDriverID = txtDriverID.Text;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

@@ -11,43 +11,52 @@ namespace INFS4420Labs
 {
 
 
-    public partial class select_a_car
+    public partial class confirmation
     {
 
         /// <summary>
-        /// ddlcarList control.
+        /// txtReferenceNO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlcarList;
+        protected global::System.Web.UI.WebControls.TextBox txtReferenceNO;
 
         /// <summary>
-        /// grdCar control.
+        /// txtStudentID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdCar;
+        protected global::System.Web.UI.WebControls.TextBox txtStudentID;
 
         /// <summary>
-        /// txtPlateNum control.
+        /// txtCarRegsterationNO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlateNum;
+        protected global::System.Web.UI.WebControls.TextBox txtCarRegsterationNO;
 
         /// <summary>
-        /// txtBrand control.
+        /// txtDriverID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBrand;
+        protected global::System.Web.UI.WebControls.TextBox txtDriverID;
+
+        /// <summary>
+        /// btnConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirmation;
     }
 }
