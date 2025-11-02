@@ -19,15 +19,15 @@ namespace INFS4420Labs
             if (Page.IsPostBack == false)
             {
                 int intRowcounter;
-                dbc.strSql = "SELECT * FROM CAR";
-                dbc.strTableName = "CAR";
-                tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
-                intRowcounter = tblCar.Rows.Count;
-                grdCar.DataSource = tblCar;
-                grdCar.DataBind();
-                int intCarIndex;
-                intCarIndex = 0;
-
+            dbc.strSql = "SELECT * FROM CAR";
+            dbc.strTableName = "CAR";
+            tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
+            intRowcounter = tblCar.Rows.Count;
+            grdCar.DataSource = tblCar;
+            grdCar.DataBind();
+            int intCarIndex;
+            intCarIndex = 0;
+                
                 List<String> StrCarName = new List<String>();
                 while (intCarIndex < intRowcounter)
                 {
@@ -45,6 +45,21 @@ namespace INFS4420Labs
                 }
             }
 
+        }
+
+        private void PopulateCarGrid()
+        {
+            grdCar.DataSource = null;
+            grdCar.DataBind();
+            int intRowcounter;
+            dbc.strSql = "SELECT  [Plate_No] AS Plate , [Car_Name] AS Brand ,[Status] AS Avilable ";
+            dbc.strSql += ",[Gear_Type] AS Type ,[Model] AS [Car Model]";
+            dbc.strSql += "FROM CAR WHERE [Car_Name] = '" + ddlcarList.Text + "' ";
+            dbc.strTableName = "CAR";
+            tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
+            intRowcounter = tblCar.Rows.Count;
+            grdCar.DataSource = tblCar;
+            grdCar.DataBind();
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +83,12 @@ namespace INFS4420Labs
 
         protected void ddlcarList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PopulateCarGrid();
+
+        }
+
+        protected void grdCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
             grdCar.DataSource = null;
             grdCar.DataBind();
             int intRowcounter;
@@ -77,22 +98,8 @@ namespace INFS4420Labs
             intRowcounter = tblCar.Rows.Count;
             grdCar.DataSource = tblCar;
             grdCar.DataBind();
-
         }
 
-        protected void grdCar_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-            txtPlateNum.Text = grdCar.SelectedRow.Cells[1].Text;
-            txtBrand.Text = grdCar.SelectedRow.Cells[2].Text;
-            DatabaseConnection.strCarPlateNo = txtPlateNum.Text;
-            //passValues();
-
-        }
-
-        //private void passValues()
-        //{
-        //    DatabaseConnection.strCarPlateNo = txtPlateNum.Text;
-        //}
     }
 }
