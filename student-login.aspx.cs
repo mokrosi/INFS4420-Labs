@@ -30,13 +30,15 @@ namespace INFS4420Labs
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            dbc.strSql = "SELECT * FROM AppLogin WHERE ID = '" + txtID + "'";
-            dbc.strSql += "AND Password = '" + txtPassword + "'";
+
+
+            dbc.strSql = "SELECT * FROM AppLogin WHERE ID = '" + txtID.Text.Trim() + "'";
+            dbc.strSql += " AND Password = '" + txtPassword.Text.Trim() + "'";
             dbc.strTableName = "AppLogin";
             dbc.tblMyTable = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
             int intRecordCounter;
             intRecordCounter = dbc.tblMyTable.Rows.Count;
-            if (intRecordCounter == 0)
+            if (intRecordCounter == 1)
             {
                 lblErrorMsg.Visible = false;
                 DatabaseConnection.strStudentID = txtID.Text;
