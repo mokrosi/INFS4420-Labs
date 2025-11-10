@@ -9,6 +9,9 @@ namespace INFS4420Labs
 {
     public partial class confirmation : System.Web.UI.Page
     {
+
+        DatabaseConnection dbc = new DatabaseConnection();
+        DatabaseOperations dbo = new DatabaseOperations();
         protected void Page_Load(object sender, EventArgs e)
         {
             txtReferenceNO.Text = DatabaseConnection.strReferenceNo;
@@ -20,6 +23,10 @@ namespace INFS4420Labs
         protected void btnConfirmation_Click(object sender, EventArgs e)
         {
 
+            dbc.strSql = "UPDATE REQUESTEDTRIP ";
+            dbc.strSql = dbc.strSql + " SET RequestedStatus = 'Yes' ";
+            dbc.strSql = dbc.strSql + " WHERE StudentID = '" + txtStudentID.Text + "'";
+            dbo.dbOperations(dbc.strSql, "");
         }
     }
 }
