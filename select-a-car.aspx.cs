@@ -27,7 +27,8 @@ namespace INFS4420Labs
             grdCar.DataBind();
             int intCarIndex;
             intCarIndex = 0;
-                
+            ddlcarList.Items.Add("All");
+
                 List<String> StrCarName = new List<String>();
                 while (intCarIndex < intRowcounter)
                 {
@@ -43,6 +44,7 @@ namespace INFS4420Labs
 
                     }
                 }
+
             }
 
         }
@@ -92,11 +94,20 @@ namespace INFS4420Labs
             grdCar.DataSource = null;
             grdCar.DataBind();
             int intRowcounter;
-            dbc.strSql = "SELECT * FROM CAR WHERE [Car_Name] = '" + ddlcarList.Text + "'";
+            if (ddlcarList.Text == "All")
+            {
+                dbc.strSql = "SELECT * FROM CAR";
+            }
+            else
+            {
+                dbc.strSql = "SELECT * FROM CAR WHERE [Car_Name] = '" + ddlcarList.Text + "'";
+
+            }
             dbc.strTableName = "CAR";
             tblCar = dbo.PopulateDataset(dbc.strSql, dbc.strTableName).Tables[0];
             intRowcounter = tblCar.Rows.Count;
             grdCar.DataSource = tblCar;
+            DatabaseConnection.strCarPlateNo = tblCar.Rows[grdCar.SelectedIndex][1].ToString();
             grdCar.DataBind();
         }
 
